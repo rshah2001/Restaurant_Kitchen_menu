@@ -84,10 +84,18 @@ Welcome to the **Restaurant Website**! This project is a web application that al
 Here are some screenshots of the application in action:
 
 ### Welcome Page
-![Welcome Page](static/images/1.png)
+<img width="781" alt="Screenshot 2024-09-14 at 1 59 18 PM" src="https://github.com/user-attachments/assets/f8f90d27-d930-43e7-982d-6ddded238ffd">
 
 ### Menu Page
-![Menu Page](path-to-screenshot)
+<img width="983" alt="Screenshot 2024-09-14 at 1 59 41 PM" src="https://github.com/user-attachments/assets/ec1cea10-a54c-45d4-9a1c-e42b9c3ae6d9">
+
+### Admin Page
+<img width="1700" alt="Screenshot 2024-09-14 at 2 00 18 PM" src="https://github.com/user-attachments/assets/65054d9e-3cb7-4ccc-a355-2c90aa380c51">
+<img width="737" alt="Screenshot 2024-09-14 at 2 00 36 PM" src="https://github.com/user-attachments/assets/13703e73-ed76-4664-8661-e3d2f4a0ab50">
+
+
+
+
 
 ## Contributing
 
