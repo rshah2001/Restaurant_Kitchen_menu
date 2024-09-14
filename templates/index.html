@@ -1,13 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Restuarant Menu</h1>
-<h3>{{ meals }}</h3>
-<h3>{{ ingredients }}</h3>
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" style="margin-top: 50px; max-width: 800px;">
+    <h1 class="text-center mb-5" style="font-family: 'Lora', serif; font-size: 48px; font-weight: bold; color: #343a40;">Restaurant Menu</h1>
 
-</body>
-</html>
+    <ul class="list-group list-group-flush">
+        {% for meal in meals %}
+            <h2 class="pt-5 text-primary" style="font-family: 'Lora', serif; font-size: 32px;">{{ meal.1 }}</h2>
+            <hr style="border-top: 2px solid #007bff; width: 80px; margin-bottom: 20px;">
+
+            {% for row in item_list %}
+                {% if row.meal_type == meal.0 %}
+                    {% if row.status == 0 %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 pb-0" style="background-color: #f1f3f5;">
+                            <h4 class="text-muted" style="font-family: 'Lora', serif;"><del>{{ row.meal }}</del></h4>
+                            <span class="badge bg-secondary rounded-pill" style="font-size: 18px;"><del>${{ row.price }}</del></span>
+                        </li>
+                        <li class="list-group-item pt-0" style="background-color: #f1f3f5;">
+                            <p class="text-muted"><del>{{ row.description }}</del></p>
+                        </li>
+                    {% else %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 pb-0" style="background-color: #fff;">
+                            <a href="{% url 'menu_item' row.pk %}" style="text-decoration: none; color: #007bff;">
+                                <h3 style="font-family: 'Lora', serif; font-size: 26px;">{{ row.meal }}</h3>
+                            </a>
+                            <span class="badge bg-primary rounded-pill" style="font-size: 18px;">${{ row.price }}</span>
+                        </li>
+                        <li class="list-group-item pt-0" style="background-color: #fff;">
+                            <p style="font-size: 16px; color: #6c757d;">{{ row.description }}</p>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
